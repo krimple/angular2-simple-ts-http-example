@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "outDir": "src",
+    "rootDir": "src",
+    "sourceMap": false,
+    "experimentalDecorators": true
+  },
+  "files": [
+    "src/app.ts",
+    "src/blog/blogroll.ts",
+    "node_modules/rxjs/Rx.d.ts",
+    "node_modules/angular2/common.d.ts",
+    "node_modules/angular2/core.d.ts",
+    "node_modules/angular2/bootstrap.d.ts",
+    "node_modules/angular2/animate.d.ts",
+    "node_modules/angular2/compiler.d.ts",
+    "node_modules/angular2/http.d.ts",
+    "node_modules/angular2/router.d.ts",
+    "node_modules/angular2/testing.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

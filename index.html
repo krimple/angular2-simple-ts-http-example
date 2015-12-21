@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://rawgithub.com/systemjs/systemjs/0.19.6/dist/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/http.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.0/router.dev.js"></script>
+  </head>
+
+  <body>
+     <script>
+      System.config({
+        transpiler: 'typescript',
+        typescriptOptions: { emitDecoratorMetadata: true },
+        packages: {'src': {defaultExtension: 'ts'}}
+      });
+    </script>
+    <script>
+      System.import('angular2/platform/browser').then(function(ng){
+        System.import('src/app').then(function(src) {
+          ng.bootstrap(src.App);
+        });
+      });
+    </script>
+    <h1>Hello Plunker!</h1>
+    <app>foobarbaaz</app>
+  </body>
+
+</html>
