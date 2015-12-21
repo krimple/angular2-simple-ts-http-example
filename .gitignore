@@ -1,8 +1,8 @@
 .DS_Store
-.tmp
-.swp
-.bak
+*.tmp
+*.swp
+*.bak
 node_modules
 .idea
-src/**/*.js
+src/**/*js
 
