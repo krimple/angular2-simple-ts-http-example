@@ -1,0 +1,9 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "blog entry",
+      "content": "<em>This is cool</em><p>wow</p>"
+    }
+  ]
+}

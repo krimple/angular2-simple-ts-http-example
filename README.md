@@ -1,9 +1,8 @@
-A lightest-weight example of an Angular2 TypeScript application with:
+Takes up what we've done with the first blog post on Angular 2 Beta and
+adds multiple routes and forms to the "blog system" sample.
 
-  * TypeScript compilation
-  * Beta 0 support
-  * Http and the observable API
-  * HTML rendering
+The use case is silly, but the coding examples hopefully zero in on what
+you need to get a basic Angular 2 application going.
 
 ## To set up
 
@@ -12,8 +11,8 @@ npm install -g live-server
 npm install -g typescript@1.7.3
 cd projectdir
 npm install
-live-server
 tsc (should find the typescript tsconfig.json file)
+live-server
 ```
 
 You may also open this in WebStorm or any other tool that provides a

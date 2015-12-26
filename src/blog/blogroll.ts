@@ -4,7 +4,7 @@ import {Http, Response, HTTP_PROVIDERS} from "angular2/http";
 import 'rxjs/add/operator/map';
 
 @Component({
-    providers: [HTTP_PROVIDERS],
+    providers: [],
     template:`
     <div *ngFor="#blog of blogs">
       <h1>{{ blog.title }}</h1>
@@ -18,15 +18,15 @@ export class BlogRoll {
     blogs: Array<BlogEntry>;
 
     constructor(http: Http) {
-        http.get("/data/data.json")
+        http.get("/api/blogs")
             .map((res: Response) => {
                 return BlogEntry.asBlogEntries(res.json())}
             )
             .subscribe(
                 (data: Array<BlogEntry>) => {
-                console.log('data is', data);
-                this.blogs = data;
-                },
+                    console.log('data is', data);
+                    this.blogs = data;
+                    },
                 (error: Object) => {
                     console.log('error!', error);
                 }
@@ -46,7 +46,10 @@ class BlogEntry {
         return jsonArray.map((datum) => BlogEntry.asBlogEntry(datum));
     }
 
-    static asBlogEntry(json: Object) {
-        return new BlogEntry(json["title"], json["content"]);
+    static asBlogEntry(json: any) {
+        var title: string = json['title'];
+        var content: string = json['content'];
+
+        return new BlogEntry(title, content);
     }
 }

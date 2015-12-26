@@ -1,17 +1,7 @@
 import {Component} from 'angular2/core';
-import {BlogRoll} from './blog/blogroll';
+import {AppShell} from './app-shell/app-shell';
+import {bootstrap} from "angular2/platform/browser";
+import {HTTP_PROVIDERS} from "angular2/http";
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-@Component({
-  template: `
-   {{ message }}
-   <blog-roll></blog-roll>
-  `,
-  selector: 'app',
-  directives: [BlogRoll]
-})
-export class App {
-  message: String;
-  constructor() {
-    this.message = 'Hi there!';
-  }
-}
+bootstrap(AppShell, [HTTP_PROVIDERS]);
