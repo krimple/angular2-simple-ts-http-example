@@ -1,9 +1,9 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "title": "blog entry",
-      "content": "<em>This is cool</em><p>wow</p>"
+      "contentRendered": "<h2 id=\"this-is-a-new-one\">This is a new one</h2>\n",
+      "contentMarkdown": "## This is a new one",
+      "id": 2
     }
   ]
 }

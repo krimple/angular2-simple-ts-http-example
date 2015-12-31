@@ -5,18 +5,21 @@
     "target": "es5",
     "noImplicitAny": true,
     "outDir": "public/app",
-    "rootDir": "src",
-    "inlineSourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
   "filesGlob": [
-    "src/**/*.ts"
+    "**/*.ts"
   ],
   "files": [
     "src/app.ts",
+    "src/services/blog-service.ts",
+    "src/services/markdown-service.ts",
+    "src/domain/blog-entry.ts",
+    "src/blog-editor/blog-editor.ts",
     "src/blog/blogroll.ts",
-    "src/app-shell/app-shell.ts"
+    "src/app-shell/app-shell.ts",
+    "typings/tsd.d.ts"
   ],
   "exclude": [
     "node_modules"

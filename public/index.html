@@ -2,15 +2,20 @@
 <html>
 
     <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
         <script src="lib/angular2-polyfills.js"></script>
         <script src="lib/system.js"></script>
         <script src="lib/Rx.js"></script>
         <script src="lib/angular2.dev.js"></script>
         <script src="lib/http.dev.js"></script>
         <script src="lib/router.dev.js"></script>
-
-        <base href="/"></script>
+        <script src="lib/marked.js"></script>
+        <base href="/">
     </head>
 
     <body>
@@ -22,13 +27,17 @@
                         format: 'register',
                         defaultExtension: 'js'
                     }
-                }
+                },
+               map: {
+                   marked: 'lib/marked.js'
+               }
             });
             System.import('app/app')
             .then(null, console.error.bind(console));
         </script>
-        <h1>Hello Plunker!</h1>
-        <app-shell>foobarbaaz</app-shell>
+        <div class="container">
+            <app-shell>foobarbaaz</app-shell>
+        </div>
     </body>
 
 </html>

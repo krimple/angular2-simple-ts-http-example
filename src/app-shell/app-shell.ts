@@ -1,15 +1,11 @@
 import {Component} from "angular2/core";
-import {ROUTER_PROVIDERS} from 'angular2/router';
 import {CORE_DIRECTIVES} from "angular2/common";
-
-//, HashLocationStrategy, LocationStrategy} from 'angular2/router';
 import {BlogRoll} from "../blog/blogroll";
-//import {reflector} from 'angular2/src/core/reflection/reflection';
-//import {ReflectionCapabilities} from 'angular2/src/core/reflection/reflection_capabilities';
+import {BlogEditor} from "../blog-editor/blog-editor";
 import {
     RouterLink,
+    ROUTER_DIRECTIVES,
     RouteConfig,
-    Router,
     Route,
     RouterOutlet,
     Location,
@@ -20,19 +16,22 @@ import {
 @Component({
     selector: 'app-shell',
     template: `
-        <a [routerLink]="['BlogRoll']">Blog Roll</a>
-        <br/>
-        <hr/>
-        <router-outlet></router-outlet>
+
+    <div class="pure-menu pure-menu-horizontal">
+    <span class="pure-menu-heading">Simple Router Demo</span>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a class="pure-menu-link" [routerLink]="['BlogRoll']">Blog Roll</a></li>
+        <li class="pure-menu-item"><a class="pure-menu-link" [routerLink]="['BlogEditor']">Blog Editor</a></li>
+    </ul>
+    </div>
+    <router-outlet></router-outlet>
     `,
-    directives: [CORE_DIRECTIVES, RouterLink, RouterOutlet],
-    providers: [ROUTER_PROVIDERS]
+    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    new Route({ path: '/blogroll',
-                component: BlogRoll,
-                name: 'BlogRoll',
-                useAsDefault: true})
+    new Route({ path: '/blogroll', component: BlogRoll, name: 'BlogRoll', useAsDefault: true}),
+    new Route({ path: '/blogeditor', component: BlogEditor, name: 'BlogEditor'}),
+    new Route({ path: '/blogeditor/:id', component: BlogEditor, name: 'BlogEditorById'})
 ])
 export class AppShell {
 
