@@ -1,0 +1,15 @@
+{
+  "name": "angular2-material",
+  "homepage": "https://github.com/urish/angular2-material-build",
+  "version": "2.0.0-alpha.23",
+  "_release": "2.0.0-alpha.23",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.0.0-alpha.23",
+    "commit": "e9e6a46de696165942fff8410122aaee0214d7b0"
+  },
+  "_source": "git://github.com/urish/angular2-material-build.git",
+  "_target": "~2.0.0-alpha.23",
+  "_originalSource": "angular2-material",
+  "_direct": true
+}

@@ -1,0 +1,23 @@
+{
+  "name": "angular2-ts-simple-route-example",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ken Rimple <krimple@chariotsolutions.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/krimple/angular2-simple-ts-http-example",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular2-material": "~2.0.0-alpha.23",
+    "bootstrap": "~3.3.6"
+  }
+}

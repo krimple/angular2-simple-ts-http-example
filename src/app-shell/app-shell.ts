@@ -1,3 +1,8 @@
+import {BootstrapContainer} from '../bootstrap/container/container';
+import {MessageService} from '../services/message-service';
+import {MenuBar} from '../bootstrap/menubar/menubar';
+import {Alert} from '../bootstrap/alert/alert';
+import {AlertMessage} from '../bootstrap/alert/alert-message';
 import {Component} from "angular2/core";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {BlogRoll} from "../blog/blogroll";
@@ -16,17 +21,22 @@ import {
 @Component({
     selector: 'app-shell',
     template: `
+    <bsContainer>
+        <menubar>
+            <li class="pure-menu-item"><a [routerLink]="['BlogRoll']">Blog Roll</a></li>
+            <li class="pure-menu-item"><a [routerLink]="['BlogEditor']">Blog Editor</a></li>
+       </menubar>
 
-    <div class="pure-menu pure-menu-horizontal">
-    <span class="pure-menu-heading">Simple Router Demo</span>
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a class="pure-menu-link" [routerLink]="['BlogRoll']">Blog Roll</a></li>
-        <li class="pure-menu-item"><a class="pure-menu-link" [routerLink]="['BlogEditor']">Blog Editor</a></li>
-    </ul>
-    </div>
-    <router-outlet></router-outlet>
+       <!-- messages, if any -->
+       <row *ngFor="#message of messages">
+            <alert [message]="message"></alert>
+       </row>
+
+       <router-outlet></router-outlet>
+    </bsContainer>
     `,
-    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, BootstrapContainer, MenuBar, Alert],
+    bindings: [MessageService]
 })
 @RouteConfig([
     new Route({ path: '/blogroll', component: BlogRoll, name: 'BlogRoll', useAsDefault: true}),
@@ -34,5 +44,11 @@ import {
     new Route({ path: '/blogeditor/:id', component: BlogEditor, name: 'BlogEditorById'})
 ])
 export class AppShell {
+
+    messages: AlertMessage[];
+    constructor(private messageService: MessageService) {
+        this.messages = messageService.messages;
+        messageService.add('this is on fire!');
+    }
 
 }
